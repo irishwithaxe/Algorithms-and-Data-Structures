@@ -13,5 +13,12 @@ namespace AlgorithmsDataStructures.Extensions
 			for (long i = 0; i < array.LongLength; i++)
 				array[i] = getValue();
 		}
+
+		public static void Replace<T>(this T[] array, long i, long j)
+		{
+			T x = array[i];
+			array[i] = array[j];
+			array[j] = x;
+		}
 	}
 }
