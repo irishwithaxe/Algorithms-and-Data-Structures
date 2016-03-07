@@ -9,20 +9,30 @@ using AlgorithmsDataStructures.Sorting;
 
 namespace Toster
 {
-	class Program
+	public static class Program
 	{
+		static long length = 100000;
+		static int[] GetArr() { return new int[length]; }
+		
 		static void Main(string[] args)
 		{
-			"Started".wl();
-			var arr = new int[100000];
+			"Started for arrey length {0}".wl(length);
+			var etalon = GetArr();
+			var array = GetArr();
 			var rnd = new Random();
-			arr.FillItems(() => rnd.Next(11, 99));
+			etalon.FillItems(() => rnd.Next(-1000, 1000));
 
-			"start insertion sort for arr length {0}".wlStart(arr.Length);
-			Insertion.Sort(arr, (x, y) => x <= y);
-			"sorted".wlStop();
+			etalon.CopyTo(array, 0L);
+			"start simple insertion sort.".wlStart();
+			Insertion.Sort(array, (x, y) => x <= y);
+			"sorted.".wlStop();
 
-			"press any key".wl();
+			etalon.CopyTo(array, 0L);
+			"start simple selection sort.".wlStart();
+			Selection.Sort(array, (x,y) => x<= y);
+			"sorted.".wlStop();
+
+			"\npress any key".wl();
 			Console.ReadKey();
 		}
 	}
