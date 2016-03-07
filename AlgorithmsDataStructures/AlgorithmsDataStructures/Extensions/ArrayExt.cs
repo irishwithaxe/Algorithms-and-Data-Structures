@@ -8,12 +8,6 @@ namespace AlgorithmsDataStructures.Extensions
 {
 	public static class ArrayExt
 	{
-		public static void FillItems<T> (this T[] array, Func<T> getValue)
-		{
-			for (long i = 0; i < array.LongLength; i++)
-				array[i] = getValue();
-		}
-
 		public static void Replace<T>(this T[] array, long i, long j)
 		{
 			T x = array[i];

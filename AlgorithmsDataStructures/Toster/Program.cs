@@ -11,26 +11,65 @@ namespace Toster
 {
 	public static class Program
 	{
-		static long length = 100000;
-		static int[] GetArr() { return new int[length]; }
-		
+		static T[] MakeArray<T>(this long length) { return new T[length]; }
+		static T[] Fill<T>(this T[] array, Func<T> getValue)
+		{
+			for (long i = 0; i < array.LongLength; i++)
+				array[i] = getValue();
+			return array;
+		}
+
+		static bool IsSorted<T>(this T[] array, Func<T, T, bool> isSorted)
+		{
+			for (long i = 0; i < array.LongLength - 1; i++)
+				if (!isSorted(array[i], array[i + 1]))
+					return false;
+
+			return true;
+		}
+
 		static void Main(string[] args)
 		{
-			"Started for arrey length {0}".wl(length);
-			var etalon = GetArr();
-			var array = GetArr();
+			var length = 8000L;
+			"Started for arrey length {0}\n".wl(length);
+
 			var rnd = new Random();
-			etalon.FillItems(() => rnd.Next(-1000, 1000));
+			var etalon = length.MakeArray<int>().Fill(() => rnd.Next(-1000, 1000));
+			var array = length.MakeArray<int>();
+			Func<int, int, bool> isSorted = (x1, x2) => { return x1 <= x2; };
 
 			etalon.CopyTo(array, 0L);
-			"start simple insertion sort.".wlStart();
-			Insertion.Sort(array, (x, y) => x <= y);
-			"sorted.".wlStop();
+			if (!array.IsSorted(isSorted))
+			{
+				"start bubble sort.".wlStart();
+				BubbleSort.Sort(array, isSorted);
+				if (!array.IsSorted(isSorted))
+					"NOT SORTED".wlStop();
+				else
+					"sorted.".wlStop();
+			}
 
 			etalon.CopyTo(array, 0L);
-			"start simple selection sort.".wlStart();
-			Selection.Sort(array, (x,y) => x<= y);
-			"sorted.".wlStop();
+			if (!array.IsSorted(isSorted))
+			{
+				"start simple insertion sort.".wlStart();
+				Insertion.Sort(array, isSorted);
+				if (!array.IsSorted(isSorted))
+					"NOT SORTED".wlStop();
+				else
+					"sorted.".wlStop();
+			}
+
+			etalon.CopyTo(array, 0L);
+			if (!array.IsSorted(isSorted))
+			{
+				"start simple selection sort.".wlStart();
+				Selection.Sort(array, isSorted);
+				if (!array.IsSorted(isSorted))
+					"NOT SORTED".wlStop();
+				else
+					"sorted.".wlStop();
+			}
 
 			"\npress any key".wl();
 			Console.ReadKey();
