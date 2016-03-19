@@ -21,7 +21,7 @@ namespace UnitTestProject1
 			var arr = ArrayGenerator.RandomArray1.GetCopy();
 			BubbleSort.CocktailSort(arr, ArrayGenerator.IsSortedFunc);
 			Assert.AreEqual(arr.LongLength, ArrayGenerator.Length);
-			Assert.AreEqual(arr.IsSorted(ArrayGenerator.IsSortedFunc), true);
+			Assert.IsTrue(arr.IsSorted(ArrayGenerator.IsSortedFunc));
 		}
 
 		[TestMethod]
@@ -30,7 +30,7 @@ namespace UnitTestProject1
 			var arr = ArrayGenerator.RandomArray2.GetCopy();
 			BubbleSort.CocktailSort(arr, ArrayGenerator.IsSortedFunc);
 			Assert.AreEqual(arr.LongLength, ArrayGenerator.Length);
-			Assert.AreEqual(arr.IsSorted(ArrayGenerator.IsSortedFunc), true);
+			Assert.IsTrue(arr.IsSorted(ArrayGenerator.IsSortedFunc));
 		}
 
 		[TestMethod]
@@ -39,7 +39,7 @@ namespace UnitTestProject1
 			var arr = ArrayGenerator.SortedArray1.GetCopy();
 			BubbleSort.CocktailSort(arr, ArrayGenerator.IsSortedFunc);
 			Assert.AreEqual(arr.LongLength, ArrayGenerator.Length);
-			Assert.AreEqual(arr.IsSorted(ArrayGenerator.IsSortedFunc), true);
+			Assert.IsTrue(arr.IsSorted(ArrayGenerator.IsSortedFunc));
 		}
 
 		[TestMethod]
@@ -48,7 +48,7 @@ namespace UnitTestProject1
 			var arr = ArrayGenerator.SortedArray2.GetCopy();
 			BubbleSort.CocktailSort(arr, ArrayGenerator.IsSortedFunc);
 			Assert.AreEqual(arr.LongLength, ArrayGenerator.Length);
-			Assert.AreEqual(arr.IsSorted(ArrayGenerator.IsSortedFunc), true);
+			Assert.IsTrue(arr.IsSorted(ArrayGenerator.IsSortedFunc));
 		}
 
 		[TestMethod]
@@ -57,7 +57,7 @@ namespace UnitTestProject1
 			var arr = ArrayGenerator.RandomArray1.GetCopy();
 			BubbleSort.Sort(arr, ArrayGenerator.IsSortedFunc);
 			Assert.AreEqual(arr.LongLength, ArrayGenerator.Length);
-			Assert.AreEqual(arr.IsSorted(ArrayGenerator.IsSortedFunc), true);
+			Assert.IsTrue(arr.IsSorted(ArrayGenerator.IsSortedFunc));
 		}
 
 		[TestMethod]
@@ -66,7 +66,7 @@ namespace UnitTestProject1
 			var arr = ArrayGenerator.RandomArray2.GetCopy();
 			BubbleSort.Sort(arr, ArrayGenerator.IsSortedFunc);
 			Assert.AreEqual(arr.LongLength, ArrayGenerator.Length);
-			Assert.AreEqual(arr.IsSorted(ArrayGenerator.IsSortedFunc), true);
+			Assert.IsTrue(arr.IsSorted(ArrayGenerator.IsSortedFunc));
 		}
 
 		[TestMethod]
@@ -75,7 +75,7 @@ namespace UnitTestProject1
 			var arr = ArrayGenerator.SortedArray1.GetCopy();
 			BubbleSort.Sort(arr, ArrayGenerator.IsSortedFunc);
 			Assert.AreEqual(arr.LongLength, ArrayGenerator.Length);
-			Assert.AreEqual(arr.IsSorted(ArrayGenerator.IsSortedFunc), true);
+			Assert.IsTrue(arr.IsSorted(ArrayGenerator.IsSortedFunc));
 		}
 
 		[TestMethod]
@@ -84,7 +84,7 @@ namespace UnitTestProject1
 			var arr = ArrayGenerator.SortedArray2.GetCopy();
 			BubbleSort.Sort(arr, ArrayGenerator.IsSortedFunc);
 			Assert.AreEqual(arr.LongLength, ArrayGenerator.Length);
-			Assert.AreEqual(arr.IsSorted(ArrayGenerator.IsSortedFunc), true);
+			Assert.IsTrue(arr.IsSorted(ArrayGenerator.IsSortedFunc));
 		}
 	}
 }

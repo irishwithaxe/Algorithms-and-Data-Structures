@@ -11,7 +11,10 @@ namespace AlgorithmsDataStructures.Sorting
 	{
 		public static void Sort<T>(T[] array, Func<T, T, bool> isSorted)
 		{
-
+			for (long i = 1; i < array.LongLength; i++)
+				for (long j = array.LongLength - 1; j >= i; j--)
+					if (!isSorted(array[j - 1], array[j]))
+						array.Replace(j - 1, j);
 		}
 
 		public static void CocktailSort<T>(T[] array, Func<T, T, bool> isSorted)
