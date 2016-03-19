@@ -11,6 +11,11 @@ namespace AlgorithmsDataStructures.Sorting
 	{
 		public static void Sort<T>(T[] array, Func<T, T, bool> isSorted)
 		{
+
+		}
+
+		public static void CocktailSort<T>(T[] array, Func<T, T, bool> isSorted)
+		{
 			bool hasReplace = true;
 			long start, end, leftreplace, rightreplace;
 

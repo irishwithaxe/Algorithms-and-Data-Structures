@@ -42,7 +42,7 @@ namespace Toster
 			if (!array.IsSorted(isSorted))
 			{
 				"start bubble sort.".wlStart();
-				BubbleSort.Sort(array, isSorted);
+				BubbleSort.CocktailSort(array, isSorted);
 				if (!array.IsSorted(isSorted))
 					"NOT SORTED".wlStop();
 				else
