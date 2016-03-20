@@ -11,23 +11,6 @@ namespace Toster
 {
 	public static class Program
 	{
-		static T[] MakeArray<T>(this long length) { return new T[length]; }
-		static T[] Fill<T>(this T[] array, Func<T> getValue)
-		{
-			for (long i = 0; i < array.LongLength; i++)
-				array[i] = getValue();
-			return array;
-		}
-
-		static bool IsSorted<T>(this T[] array, Func<T, T, bool> isSorted)
-		{
-			for (long i = 0; i < array.LongLength - 1; i++)
-				if (!isSorted(array[i], array[i + 1]))
-					return false;
-
-			return true;
-		}
-
 		static void Main(string[] args)
 		{
 			var length = 20L;

@@ -35,7 +35,7 @@ namespace UnitTestProject1
 
 	public static class ArrayGenerator
 	{
-		public static readonly long Length;
+		public static readonly long Length = 900L;
 
 		public static double[] RandomArray1 { get; private set; }
 		public static double[] RandomArray2 { get; private set; }
@@ -72,8 +72,6 @@ namespace UnitTestProject1
 		static ArrayGenerator()
 		{
 			var rnd = new Random();
-
-			Length = 9000L;
 
 			RandomArray1 = Length.MakeArray<double>().Fill(() => rnd.Next(-1000, 1000) * rnd.NextDouble());
 			RandomArray2 = Length.MakeArray<double>().Fill(() => rnd.Next(-1000, 1000) * rnd.NextDouble());

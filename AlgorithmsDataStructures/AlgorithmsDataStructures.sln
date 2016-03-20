@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Toster", "Toster\Toster.csp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTestProject1", "UnitTestProject1\UnitTestProject1.csproj", "{18932CBB-859A-48CE-AD47-DBC1CA2C4741}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TimeMeasurements", "TimeMeasurements\TimeMeasurements.csproj", "{3CB66B65-A458-46FE-81F6-00E9FF08614C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{18932CBB-859A-48CE-AD47-DBC1CA2C4741}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{18932CBB-859A-48CE-AD47-DBC1CA2C4741}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{18932CBB-859A-48CE-AD47-DBC1CA2C4741}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3CB66B65-A458-46FE-81F6-00E9FF08614C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3CB66B65-A458-46FE-81F6-00E9FF08614C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3CB66B65-A458-46FE-81F6-00E9FF08614C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3CB66B65-A458-46FE-81F6-00E9FF08614C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

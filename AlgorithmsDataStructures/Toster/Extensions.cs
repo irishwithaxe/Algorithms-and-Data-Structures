@@ -32,7 +32,7 @@ namespace Toster
 		public static void wl(this string format, params object[] args)
 		{
 			var info = string.Format(format, args);
-			Console.WriteLine(string.Format("[{0}] {1}", GetDTNow() ,info));
+			Console.WriteLine(string.Format("[{0}] {1}", GetDTNow(), info));
 		}
 
 		static string GetDTNow()
@@ -44,12 +44,31 @@ namespace Toster
 		public static void wl<T>(this T[] array)
 		{
 			Console.Write(string.Format("[{0}] ", GetDTNow()));
-			foreach (var item in array.Take(array.Length -1))
+			foreach (var item in array.Take(array.Length - 1))
 			{
 				Console.Write(item.ToString());
 				Console.Write(", ");
 			}
 			Console.WriteLine(array.Last());
 		}
+
+		public static T[] MakeArray<T>(this long length) { return new T[length]; }
+
+		public static T[] Fill<T>(this T[] array, Func<T> getValue)
+		{
+			for (long i = 0; i < array.LongLength; i++)
+				array[i] = getValue();
+			return array;
+		}
+
+		public static bool IsSorted<T>(this T[] array, Func<T, T, bool> isSorted)
+		{
+			for (long i = 0; i < array.LongLength - 1; i++)
+				if (!isSorted(array[i], array[i + 1]))
+					return false;
+
+			return true;
+		}
+
 	}
 }
