@@ -73,7 +73,7 @@ namespace UnitTestProject1
 		{
 			var rnd = new Random();
 
-			Length = 3000L;
+			Length = 9000L;
 
 			RandomArray1 = Length.MakeArray<double>().Fill(() => rnd.Next(-1000, 1000) * rnd.NextDouble());
 			RandomArray2 = Length.MakeArray<double>().Fill(() => rnd.Next(-1000, 1000) * rnd.NextDouble());

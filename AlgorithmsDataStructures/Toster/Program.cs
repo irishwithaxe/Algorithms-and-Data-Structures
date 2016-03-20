@@ -30,8 +30,11 @@ namespace Toster
 
 		static void Main(string[] args)
 		{
-			var length = 12L;
-			"Started for arrey length {0}\n".wl(length);
+			var length = 20L;
+
+			"Started for arrey length {0}:\n".wl(length);
+
+			Insertion.ShellSortBasisHibard(length).wl();
 
 			var rnd = new Random();
 			var etalon = length.MakeArray<int>().Fill(() => rnd.Next(1, 9));
@@ -39,8 +42,8 @@ namespace Toster
 			Func<int, int, bool> isSorted = (x1, x2) => { return x1 <= x2; };
 
 			etalon.CopyTo(array, 0L);
-			BubbleSort.Sort(array, isSorted);
 
+			Insertion.ShellSort(array, isSorted);
 			etalon.wl();
 			array.wl();
 

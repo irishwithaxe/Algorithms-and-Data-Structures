@@ -15,6 +15,42 @@ namespace UnitTestProject1
 		}
 
 		[TestMethod]
+		public void TestShellRandomSort1()
+		{
+			var arr = ArrayGenerator.RandomArray1.GetCopy();
+			Insertion.ShellSort(arr, ArrayGenerator.IsSortedFunc);
+			Assert.AreEqual(arr.LongLength, ArrayGenerator.Length);
+			Assert.IsTrue(arr.IsSorted(ArrayGenerator.IsSortedFunc));
+		}
+
+		[TestMethod]
+		public void TestShellRandomSort2()
+		{
+			var arr = ArrayGenerator.RandomArray2.GetCopy();
+			Insertion.ShellSort(arr, ArrayGenerator.IsSortedFunc);
+			Assert.AreEqual(arr.LongLength, ArrayGenerator.Length);
+			Assert.IsTrue(arr.IsSorted(ArrayGenerator.IsSortedFunc));
+		}
+
+		[TestMethod]
+		public void TestShellSortedSort1()
+		{
+			var arr = ArrayGenerator.SortedArray1.GetCopy();
+			Insertion.ShellSort(arr, ArrayGenerator.IsSortedFunc);
+			Assert.AreEqual(arr.LongLength, ArrayGenerator.Length);
+			Assert.IsTrue(arr.IsSorted(ArrayGenerator.IsSortedFunc));
+		}
+
+		[TestMethod]
+		public void TestShellSortedSort2()
+		{
+			var arr = ArrayGenerator.SortedArray2.GetCopy();
+			Insertion.ShellSort(arr, ArrayGenerator.IsSortedFunc);
+			Assert.AreEqual(arr.LongLength, ArrayGenerator.Length);
+			Assert.IsTrue(arr.IsSorted(ArrayGenerator.IsSortedFunc));
+		}
+
+		[TestMethod]
 		public void TestBaseRandomSort1()
 		{
 			var arr = ArrayGenerator.RandomArray1.GetCopy();
