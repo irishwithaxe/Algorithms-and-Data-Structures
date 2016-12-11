@@ -11,7 +11,7 @@ using AlgorithmsDataStructures.DataStructures;
 namespace Toster {
    public static class Program {
       static void Main(string[] args) {
-         var length = 15L;
+         var length = 10L;
 
          "Started for arrey length {0}:\n".wl(length);
 
@@ -20,7 +20,7 @@ namespace Toster {
          var arr = length.MakeArray<int>().Fill(() => rnd.Next(11, 99));
          arr.wl();
 
-         Hoar.Sort(arr);
+         Heapsort.Sort(arr);
          arr.wl();
 
          Console.ReadKey();

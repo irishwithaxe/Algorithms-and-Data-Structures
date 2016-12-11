@@ -1,12 +1,10 @@
 ﻿using System;
-using System.Text;
-using System.Collections.Generic;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
 using AlgorithmsDataStructures.Sorting;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace UnitTestProject1 {
    [TestClass]
-   public class TestHoarSort {
+   public class TestHeapSort {
       [TestMethod]
       public void TestEmpty() {
          var arr = new int[0];
@@ -14,7 +12,7 @@ namespace UnitTestProject1 {
       }
 
       private static void Sort<T>(T[] arr) where T : IComparable {
-         Hoar.Sort(arr);
+         Heapsort.Sort(arr);
       }
 
       [TestMethod]

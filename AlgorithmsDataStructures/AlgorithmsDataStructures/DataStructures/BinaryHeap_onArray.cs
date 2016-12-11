@@ -30,7 +30,9 @@ namespace AlgorithmsDataStructures.DataStructures {
          }
       }
 
-      public T GetMax() {
+      public T Max { get { return data[0]; } }
+
+      public T MaxExtract() {
          var max = data[0];
          data[0] = data[Length - 1];
          Length--;
@@ -67,7 +69,7 @@ namespace AlgorithmsDataStructures.DataStructures {
          return true;
       }
 
-      public bool TryGetRightOf(int index, out int rightIndex, out T right) {
+      private bool TryGetRightOf(int index, out int rightIndex, out T right) {
          right = default(T);
          rightIndex = index * 2 + 2;
          if (rightIndex >= Length)
@@ -77,7 +79,7 @@ namespace AlgorithmsDataStructures.DataStructures {
          return true;
       }
 
-      public void SiftUp(int index) {
+      private void SiftUp(int index) {
          if (index == 0 || index >= Length)
             return;
 
@@ -89,7 +91,7 @@ namespace AlgorithmsDataStructures.DataStructures {
          SiftUp(parentIndex);
       }
 
-      public void SiftDown(int index) {
+      private void SiftDown(int index) {
          T right, left;
          int rightIndex, leftIndex;
 

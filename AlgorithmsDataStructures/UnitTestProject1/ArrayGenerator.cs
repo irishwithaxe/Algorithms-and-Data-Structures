@@ -64,8 +64,8 @@ namespace UnitTestProject1 {
       static ArrayGenerator() {
          var rnd = new Random();
 
-         RandomArray1 = Length.MakeArray<double>().Fill(() => rnd.Next(-1000, 1000) * rnd.NextDouble());
-         RandomArray2 = Length.MakeArray<double>().Fill(() => rnd.Next(-1000, 1000) * rnd.NextDouble());
+         RandomArray1 = Length.MakeArray<double>().Fill(() => rnd.Next(-10000, 10000) * rnd.NextDouble());
+         RandomArray2 = Length.MakeArray<double>().Fill(() => rnd.Next(-10000, 10000) * rnd.NextDouble());
 
          SortedArray1 = Length.MakeArray<double>();
          for (var i = 0L; i < Length; i++) SortedArray1[i] = 0.01 * (i + 0.5);

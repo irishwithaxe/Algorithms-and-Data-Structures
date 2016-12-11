@@ -58,6 +58,7 @@
     <Compile Include="TestHoarSort.cs" />
     <Compile Include="TestInsertionSort.cs" />
     <Compile Include="TestSelectionSort.cs" />
+    <Compile Include="TestHeapSort.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\AlgorithmsDataStructures\AlgorithmsDataStructures.csproj">
