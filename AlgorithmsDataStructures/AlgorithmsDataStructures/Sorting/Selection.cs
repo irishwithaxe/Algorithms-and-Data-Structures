@@ -17,7 +17,7 @@ namespace AlgorithmsDataStructures.Sorting {
                   selected = j;
 
             if (selected != i)
-               array.Replace(i, selected);
+               array.Swap(i, selected);
          }
       }
    }

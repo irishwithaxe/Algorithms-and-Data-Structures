@@ -55,6 +55,7 @@
     <Compile Include="ArrayGenerator.cs" />
     <Compile Include="TestBubbleSort.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TestHoarSort.cs" />
     <Compile Include="TestInsertionSort.cs" />
     <Compile Include="TestSelectionSort.cs" />
   </ItemGroup>

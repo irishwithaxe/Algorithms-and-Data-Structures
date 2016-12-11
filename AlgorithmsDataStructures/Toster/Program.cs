@@ -11,33 +11,17 @@ using AlgorithmsDataStructures.DataStructures;
 namespace Toster {
    public static class Program {
       static void Main(string[] args) {
-         var length = 8L;
+         var length = 15L;
 
          "Started for arrey length {0}:\n".wl(length);
 
          var rnd = new Random();
-         var etalon = length.MakeArray<int>().Fill(() => rnd.Next(1, 50));
-         etalon.wl();
+         //var etalon = new int[] { 7, 2, 8, 4, 6, 5, 1, 9, 3, 0 };
+         var arr = length.MakeArray<int>().Fill(() => rnd.Next(11, 99));
+         arr.wl();
 
-         var binheap = new BinaryHeap_onArray<int>(etalon, 100);
-         binheap.ToArray().wl();
-
-         binheap[6] = 55;
-         binheap.ToArray().wl();
-
-         //binheap.Add(rnd.Next(1, 50));
-         //binheap.Add(rnd.Next(1, 50));
-         //binheap.Add(rnd.Next(1, 50));
-         //binheap.Add(rnd.Next(1, 50));
-         //binheap.Add(rnd.Next(1, 50));
-         //binheap.Add(rnd.Next(1, 50));
-         //binheap.Add(rnd.Next(1, 50));
-         //binheap.ToArray().wl();
-
-         while (binheap.Length > 0) {
-            "max is {0}".wl(binheap.GetMax());
-            binheap.ToArray().wl();
-         }
+         Hoar.Sort(arr);
+         arr.wl();
 
          Console.ReadKey();
       }

@@ -11,7 +11,7 @@ namespace AlgorithmsDataStructures.Sorting {
          for (long i = 1; i < array.LongLength; i++)
             for (long j = array.LongLength - 1; j >= i; j--)
                if (!isSorted(array[j - 1], array[j]))
-                  array.Replace(j - 1, j);
+                  array.Swap(j - 1, j);
       }
 
       public static void CocktailSort<T>(T[] array, Func<T, T, bool> isSorted) {
@@ -31,7 +31,7 @@ namespace AlgorithmsDataStructures.Sorting {
                if (!isSorted(array[i - 1], array[i])) {
                   hasReplace = true;
                   leftreplace = i;
-                  array.Replace(i - 1, i);
+                  array.Swap(i - 1, i);
                }
 
             // >>>
@@ -40,7 +40,7 @@ namespace AlgorithmsDataStructures.Sorting {
                if (!isSorted(array[i - 1], array[i])) {
                   hasReplace = true;
                   rightreplace = i;
-                  array.Replace(i - 1, i);
+                  array.Swap(i - 1, i);
                }
          }
       }

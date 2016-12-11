@@ -13,7 +13,7 @@ namespace AlgorithmsDataStructures.Sorting {
             current = i;
 
             while (current > start && !isSorted(array[current - basis], array[current])) {
-               array.Replace(current - basis, current);
+               array.Swap(current - basis, current);
                current -= basis;
             }
          }

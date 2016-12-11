@@ -85,7 +85,7 @@ namespace AlgorithmsDataStructures.DataStructures {
          if (data[parentIndex].CompareTo(data[index]) >= 0)
             return;
 
-         data.Replace(parentIndex, index);
+         data.Swap(parentIndex, index);
          SiftUp(parentIndex);
       }
 
@@ -112,7 +112,7 @@ namespace AlgorithmsDataStructures.DataStructures {
          if (maxIndex == index)
             return;
 
-         data.Replace(index, maxIndex);
+         data.Swap(index, maxIndex);
          SiftDown(maxIndex);
       }
    }
