@@ -28,7 +28,7 @@ namespace UnitTestProject1 {
             foreach (var item in arr2)
                arr[j++] = item;
 
-            AlgorithmsDataStructures.Sorting.MergeSort.MergeDescending(arr, 0, arr1.Length - 1, arr1.Length, arr.Length - 1);
+            AlgorithmsDataStructures.Sorting.MergeSort.MergeDescending(arr, 0, arr1.Length, arr1.Length, arr.Length);
             issorted[i] = arr.IsSorted(ArrayGenerator.IsSortedFunc);
          }
 

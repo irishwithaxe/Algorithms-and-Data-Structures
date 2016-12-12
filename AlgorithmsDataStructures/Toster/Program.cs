@@ -13,13 +13,13 @@ namespace Toster {
       static void Main(string[] args) {
          var length = 10L;
 
-         "Started for arrey length {0}:\n".wl(length);
+         "len {0}:\n".wl(length);
 
          var rnd = new Random();
-         var arr = new[] { 1, 5, 6, 7, 8, 0, 0, 2, 3, 4 };
+         var arr = new int[length].Fill(() => rnd.Next(9));
          arr.wl();
 
-         MergeSort.MergeDescending(arr, 0, 4, 5, 9);
+         MergeSort.SortDescending(arr);
          arr.wl();
 
          Console.ReadKey();
