@@ -7,24 +7,23 @@ using AlgorithmsDataStructures.Extensions;
 
 namespace AlgorithmsDataStructures.Sorting {
    public static class MergeSort {
-      private static void SortDescendingInternal<T>(T[] array, int start, int end) where T : IComparable {
+      private static void SortDescendingInternal<T>(T[] array, int start, int end, T[] tmparr) where T : IComparable {
          if (end - start <= 1)
             return;
 
          var middle = start + (end - start) / 2;
-         SortDescendingInternal(array, start, middle);
-         SortDescendingInternal(array, middle, end);
+         SortDescendingInternal(array, start, middle, tmparr);
+         SortDescendingInternal(array, middle, end, tmparr);
 
-         MergeDescending(array, start, middle, middle, end);
+         MergeDescending(array, start, middle, middle, end, tmparr);
       }
 
-      public static void MergeDescending<T>(T[] array, int start1, int end1, int start2, int end2) where T : IComparable {
+      public static void MergeDescending<T>(T[] array, int start1, int end1, int start2, int end2, T[] tmparr) where T : IComparable {
          int i1 = start1;
          int i2 = start2;
          int t = 0;
 
          var tmplength = end1 - start1;
-         var tmparr = new T[tmplength];
 
          Array.Copy(array, start1, tmparr, 0, tmplength);
 
@@ -45,7 +44,8 @@ namespace AlgorithmsDataStructures.Sorting {
       }
 
       public static void SortDescending<T>(T[] array) where T : IComparable {
-         SortDescendingInternal(array, 0, array.Length);
+         var tmparr = new T[array.Length / 2 + 1];
+         SortDescendingInternal(array, 0, array.Length, tmparr);
       }
    }
 }

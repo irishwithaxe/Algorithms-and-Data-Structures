@@ -14,6 +14,8 @@ namespace UnitTestProject1 {
          var etalon = new bool[experimentlength];
          for (var i = 0; i < etalon.Length; i++) etalon[i] = true;
 
+         var tmparr = new double[experimentlength + 1];
+
          for (var i = 0; i < experimentlength; i++) {
             var arr1 = new double[rnd.Next(experimentlength)].RandomFill(rnd);
             var arr2 = new double[rnd.Next(experimentlength)].RandomFill(rnd);
@@ -28,7 +30,7 @@ namespace UnitTestProject1 {
             foreach (var item in arr2)
                arr[j++] = item;
 
-            AlgorithmsDataStructures.Sorting.MergeSort.MergeDescending(arr, 0, arr1.Length, arr1.Length, arr.Length);
+            AlgorithmsDataStructures.Sorting.MergeSort.MergeDescending(arr, 0, arr1.Length, arr1.Length, arr.Length, tmparr);
             issorted[i] = arr.IsSorted(ArrayGenerator.IsSortedFunc);
          }
 
