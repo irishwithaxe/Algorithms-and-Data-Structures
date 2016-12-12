@@ -11,5 +11,11 @@ namespace AlgorithmsDataStructures.Extensions {
          array[i] = array[j];
          array[j] = x;
       }
+
+      public static void Swap<T>(this T[] array, int i, int j) {
+         T x = array[i];
+         array[i] = array[j];
+         array[j] = x;
+      }
    }
 }

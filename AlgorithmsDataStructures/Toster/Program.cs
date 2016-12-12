@@ -16,11 +16,10 @@ namespace Toster {
          "Started for arrey length {0}:\n".wl(length);
 
          var rnd = new Random();
-         //var etalon = new int[] { 7, 2, 8, 4, 6, 5, 1, 9, 3, 0 };
-         var arr = length.MakeArray<int>().Fill(() => rnd.Next(11, 99));
+         var arr = new[] { 1, 5, 6, 7, 8, 0, 0, 2, 3, 4 };
          arr.wl();
 
-         Heapsort.Sort(arr);
+         MergeSort.MergeDescending(arr, 0, 4, 5, 9);
          arr.wl();
 
          Console.ReadKey();

@@ -17,7 +17,7 @@ namespace UnitTestProject1 {
          Hoar.Sort(arr);
       }
 
-      [TestMethod]
+      //[TestMethod]
       public void TestRandomSort1() {
          var arr = ArrayGenerator.RandomArray1.GetCopy();
          Sort(arr);
@@ -25,7 +25,7 @@ namespace UnitTestProject1 {
          Assert.IsTrue(arr.IsSorted(ArrayGenerator.IsSortedFunc));
       }
 
-      [TestMethod]
+      //[TestMethod]
       public void TestRandomSort2() {
          var arr = ArrayGenerator.RandomArray2.GetCopy();
          Sort(arr);

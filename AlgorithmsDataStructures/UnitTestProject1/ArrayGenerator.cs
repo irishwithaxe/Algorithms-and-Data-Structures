@@ -61,11 +61,15 @@ namespace UnitTestProject1 {
          return copyed;
       }
 
+      public static double[] RandomFill(this double[] array, Random rnd) {
+         return array.Fill(() => rnd.Next(-10000, 10000) * rnd.NextDouble());
+      }
+
       static ArrayGenerator() {
          var rnd = new Random();
 
-         RandomArray1 = Length.MakeArray<double>().Fill(() => rnd.Next(-10000, 10000) * rnd.NextDouble());
-         RandomArray2 = Length.MakeArray<double>().Fill(() => rnd.Next(-10000, 10000) * rnd.NextDouble());
+         RandomArray1 = Length.MakeArray<double>().RandomFill(rnd);
+         RandomArray2 = Length.MakeArray<double>().RandomFill(rnd);
 
          SortedArray1 = Length.MakeArray<double>();
          for (var i = 0L; i < Length; i++) SortedArray1[i] = 0.01 * (i + 0.5);
